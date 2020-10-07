@@ -1,0 +1,48 @@
+<h1><i class="fas fa-check"></i>Payer la commande</h1>
+
+<div id="address">
+    <p><?= $_SESSION['first_name'] . ' ' . $_SESSION['last_name'] ?></p>
+    <p><?= $_SESSION['address'] ?></p>
+    <p><?= $_SESSION['zipcode'] . ' ' . $_SESSION['city']?></p>
+    <p>Commande passée le <?= $_SESSION['date'] ?></p>
+</div>
+
+<h2>Récapitulatif de la commande</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Nom</td>
+            <td>Prix unitaire</td>
+            <td>Quantité</td>
+            <td>Prix total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($_SESSION['cart'] as $product) : ?>
+    	<tr>
+    		<td><?= $product->{'selectedMeal'} ?></td>
+            <td><?= $product->{'unitPrice'} ?></td>
+            <td><?= $product->{'selectedQuantity'} ?></td>
+            <td><?= $product->{'selectedQuantity'} * $product->{'unitPrice'} ?></td>
+        </tr>
+        <?php endforeach ?>
+        <tr>
+            <td colspan="2"></td>
+            <td class="totalprice">Prix TTC</td>
+            <td class="totalprice"><?= $_SESSION['total'] ?></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>dont TVA (20%)</td>
+            <td><?= $_SESSION['vat'] ?></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Cliquez sur "Valider" pour procéder au payement ou "Modifier" pour modifier votre commande.</p>
+
+<form method="post" action="<?= $requestUrl ?>/success">
+    <input class="submit" type="submit" value="Payer"/>
+    <button class="cancel"><a href="<?= $requestUrl ?>/order">Modifier</a></button>
+</form>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chez Lui - Pizzeria française</title>
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+    
+    <meta name="description" content="La meilleure pizzeria française de Paris. Des pizzas fabriquées à partir d'ingrédients de qualité"/>
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://www.chez-lui.fr/" />
+    <meta name="twitter:title" content="Chez Lui - Pizzeria Française" />
+    <meta name="twitter:description" content="La meilleure pizzeria française de Paris" />
+    
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet"> 
+    
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    
+    <!-- Feuilles de styles de l'application -->
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/3wa-resto.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-button.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-form.css">
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/ui-table.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Karla">
+
+    <!-- Librairie jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+
+</head>
+<body>
+
+<!-- En-tête commune -->
+<header>
+    <h1>
+        <a href="<?= $requestUrl ?>">
+            <img src="<?= $wwwUrl ?>/images/logo.png" height="63" width="57" alt="Restaurant">Chez Lui - Pizzeria française
+        </a>
+    </h1>
+</header>
+
+<!-- Interface utilisateur -->
+<nav class="user-interface">
+    <ul class="link-list">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true): ?>
+            <li><button><a href="#">Réserver</a></button></li>
+            <li><button><a href="<?= $requestUrl ?>/order">Commander</a></button></li>
+            <li><button><a href="<?= $requestUrl ?>/logout">Déconnexion</a></button></li>
+            <li><button><a href="<?= $requestUrl ?>/admin">Admin</a></button></li>
+            <p>Bonjour <?= $_SESSION['first_name'] ?>!</p>
+        <?php else: ?>
+            <li><button><a href="<?= $requestUrl ?>/adduser">Créer un compte</a></button></li>
+            <li><button><a href="<?= $requestUrl ?>/login">Connexion</a></button></li>
+        <?php endif; ?>
+    </ul>
+</nav>
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+    <ul class="link-list">
+        <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
+        <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
+        <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
+    </ul>
+    <small>Réalisé par les élèves de la 3W Academy</small>
+</footer>
+
+</body>
+</html>

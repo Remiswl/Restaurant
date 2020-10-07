@@ -1,0 +1,54 @@
+<h1><i class="fas fa-shopping-basket"></i>Passer une commande</h1>
+
+	<!-- Commander un plat -->
+	<fieldset>
+		<legend>Ajouter un article</legend>
+        <ul>
+            <li>
+		        <label for="meal">Nom :</label>
+		        <select name="meal" value="meal" id="meal"/>
+    				<?php foreach ($meals as $meal) : ?>
+    				    <option value="<?= $meal['id'] ?>"><?= $meal['title'] ?></option> 
+    				<?php endforeach ?>
+    			</select>
+    		 </li>
+    		 <li>
+    			<label for="description"></label>
+				<div id="description"></div>
+			</li>
+            <li>
+		        <label for="quantity">Quantité :</label>
+    			<input type="number" name="quantity" id="quantity" size="5" value="1" min="1"/>
+    		</li>
+    		<li>
+		        <label></label>
+    			<button type="button" id="addToCart"/>Ajouter</button>
+    		</li>	
+    	</ul>
+	</fieldset>
+
+    <!-- <form method="post" action="?= $requestUrl ?>/confirmcart"> -->
+        <!-- Récapitulatif de la commande -->
+    	<fieldset>
+    		<legend>Récapitulatif de la commande</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Pizza</td>
+                        <td>Prix unitaire</td>
+                        <td>Quantité</td>
+                        <td>Prix total</td>
+                        <td id="deleteOneMeal"></td>
+                    </tr>
+                </thead>
+                <tbody id="listOfProducts"></tbody>
+            </table>
+    	 </fieldset>
+    
+    	<button id="confirm">Valider la commande</button>
+    	<button class="cancel"><a href="<?= $requestUrl ?>/order">Annuler</a></button>
+    <!--  </form> -->
+
+<script src="<?= $wwwUrl ?>/js/orders.js"></script>
+<script src="<?= $wwwUrl ?>/js/cart.js"></script>
+<script src="<?= $wwwUrl ?>/js/confirmCart.js"></script>

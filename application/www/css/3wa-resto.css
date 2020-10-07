@@ -1,0 +1,261 @@
+html {
+  background-image:url(../images/wallpaper.jpeg);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:100%;
+  color:white;
+  font-family: 'Oswald', sans-serif;
+}
+
+.fas, .far, .fa {
+  margin-right:10px;
+}
+
+/* HEADER */
+header, footer {
+  text-align:center;
+  margin:auto;
+}
+
+header a {
+  text-decoration:none;
+  color:white;
+}
+
+header img {
+  vertical-align:middle;
+  padding-right:10px
+}
+
+header h1 {
+  vertical-align:middle;
+  margin:50px 0px 50px 0px;
+}
+
+/* MAIN */
+main {
+  width:80%;
+  text-align:center;
+  margin:auto;
+}
+
+main h1 {
+  text-align:center;
+  margin:auto;
+  margin-bottom:40px;
+}
+
+  /* Index */
+.menu {
+  display:flex;
+  flex-wrap:wrap;
+  text-align:center;
+  margin:auto;
+  justify-content:space-around;
+  margin-top:40px;
+}
+
+.card {
+  width:300px;
+  height:450px;
+  text-align:center;
+  background-color:white;
+  border-radius:10px;
+  margin:10px;
+  padding:10px;
+  transition: transform .1s;
+  color:black;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width:95%;
+  height:50%;
+  margin:5px;
+}
+
+  /* Inscription */
+form {
+  text-align:center;
+  margin:auto;
+}
+
+.error {
+  width:50%;
+  background-color:#F6A889;
+  border:1px solid red; 
+  text-align:center;
+  margin:auto;
+  padding:10px;
+}
+
+.error  p {
+  text-align:left;
+}
+
+.error span {
+  color:red;
+}
+
+fieldset {
+    text-align:center;
+    margin:auto;
+    width:50%;
+}
+
+fieldset legend {
+  margin-top:20px;
+}
+
+fieldset ul {
+  text-align:left;
+}
+
+fieldset li {
+  list-style-type:none;
+  margin:10px 0px 20px 0px;
+}
+
+fieldset label {
+  display:inline-block;
+  width:30%;
+  vertical-align:top;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid lime;
+}
+
+.fas.fa-info-circle {
+  margin-left:10px;
+}
+
+fieldset input, fieldset textarea {
+  display:inline-block;
+  width:60%;
+}
+
+.submit, #confirm {
+  margin:10px;
+  padding:15px;
+  background-color:green;
+  border-radius:90px;
+  color:white;
+}
+
+.cancel {
+  margin:10px;
+  padding:15px;
+  background-color:red;
+  border-radius:90px;
+}
+
+.cancel a, .submit a {
+  text-decoration:none;
+  color:white;
+}
+
+ /* Order */
+.delete {
+  width:30px;
+  height:30px;
+  background-color:red;
+  color:white;
+}
+
+.delete .fas {
+  margin:0;
+}
+
+.totalprice {
+  background-color:red;  
+}
+
+.link-list {
+  padding:0;
+}
+
+#description {
+  width:60%;
+  display:inline-block;
+}
+
+#description img {
+  width:120px;
+  height:120px;
+  float:left;
+  margin-right:10px;
+  border:1px solid white;
+}
+
+#description p {
+   margin-top:0;
+}
+
+#quantity {
+  width:auto;
+}
+
+#addToCart {
+  width:100px;
+  padding:10px;
+  background-color:green;
+  color:white;
+}
+
+table {
+  text-align:center;
+  margin:auto;
+  width:90%;
+  border-collapse:collapse;
+}
+
+thead td {
+  border-bottom:1px solid white;
+}
+
+tbody td {
+  padding-top:5px;
+}
+
+#deleteOneMeal {
+  border-bottom:none;
+}
+
+#address {
+  text-align:right;
+  margin:auto;
+  margin-right:0;
+  width:30%;
+  padding:10px;
+  background-color:rgba(255, 255, 255, 0.8);
+  color:black;
+}
+
+#address p {
+  text-align:left;
+  margin:auto;
+}
+
+/* FOOTER */
+footer {
+  margin-top:30px;
+}
+
+footer ul {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+footer li {
+  list-style-type:none;
+  padding:5px;
+}

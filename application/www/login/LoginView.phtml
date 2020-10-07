@@ -1,0 +1,26 @@
+<h1><i class="fas fa-lock"></i>Se connecter</h1>
+
+<i class="fas fa-info-circle" title="admin@admin.com; Azertyuiop"></i>
+
+<?php if (isset($loginError) == true) {
+    echo('<div class="error"><p><span><i class="fas fa-exclamation-triangle"></i>Erreur : votre adresse email ou votre mot de passe est incorrect</span></p></div>');
+} ?>
+
+<form method="post" action="<?= $requestUrl ?>/login">
+	<fieldset>
+		<legend><i class="fas fa-lock"></i>Informations d'authentification</legend>
+        <ul>
+            <li>
+                <label for="email">E-mail :</label>
+                <input type="text" name="email" id="email" size="50"/>
+            </li>
+    		<li>
+    		    <label for="password">Mot de passe :</label>
+    		    <input type="password" name="password" id="password" size="50"/>
+    		</li>
+        </ul>
+	 </fieldset>
+
+	<input class="submit" type="submit" value="Connexion"/>
+	<button class="cancel"><a href="<?= $requestUrl ?>/login">Annuler</a></button>
+</form>
