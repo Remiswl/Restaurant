@@ -1,5 +1,6 @@
 # Restaurant
 Developed using an MVC framework (framework designed by 3W Academy, based on __Symfony 4.4__), the restaurant's website allows registered users to book a table and order dishes.
+
 The site was made in the frame of my training in 3W Academy.
 
 ## Technologies
